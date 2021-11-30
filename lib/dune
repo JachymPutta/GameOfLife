@@ -1,0 +1,9 @@
+(library
+  (name lifelib)
+  (inline_tests)                
+  (preprocess (pps ppx_inline_test ppx_expect))
+  (wrapped false)
+  (libraries core batteries graphics))
+
+(env
+ (release (inline_tests enabled)))
