@@ -3,7 +3,7 @@ type grid = bool array array
 
 let directions = [(1, 1); (1, 0); (1, -1); (0, 1); (0, -1); (-1, 1); (-1, 0); (-1,-1)]
 
-let in_bounds n len = n < len && 0 < n 
+let in_bounds n len = n < len && 0 <= n 
 
 let neighbors ((x,y) : pos) (g : grid) : (int * pos) =
   let len = Array.length g in 
