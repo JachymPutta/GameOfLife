@@ -1,5 +1,5 @@
 (executables
  (names life)
  (public_names life)
- (libraries lifelib)
+ (libraries core batteries lifelib graphics)
  (package gameoflife))
