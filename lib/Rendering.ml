@@ -35,5 +35,13 @@ let draw_grid g =
         if g.(i).(j)
         then fill_tile startpos i j tile_size
         done;
-    done;
+    done
 
+let to_terminal iterations g =
+    for i = 0 to !iterations do 
+        (* draw_grid !g; *)
+        Printf.printf "Iteration: %i\n" (i + 1);
+        print_grid !g;
+        g := update !g 
+    done;
+    Printf.printf "Finished.\n"

@@ -18,4 +18,3 @@ let update (g : grid) : grid =
         done;
     done;
     new_g
-
