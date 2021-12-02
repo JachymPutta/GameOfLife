@@ -10,10 +10,12 @@ let fill_tile startpos nrow ncol tile_size =
     fill_rect (fst startpos + nrow * tile_size)
         (snd startpos + ncol * tile_size) (tile_size - 2) (tile_size - 2)
 
-let draw_grid g =
+let mk_screen () = 
     open_graph " 600x600";
     set_window_title "Game Of Life";
-    set_color black;
+    set_color black
+
+let draw_grid g =
     let nrow = Array.length g.(0)
     and ncol = Array.length g
     and width = size_x ()
