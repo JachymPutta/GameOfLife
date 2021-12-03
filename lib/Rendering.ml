@@ -11,7 +11,7 @@ let fill_tile startpos nrow ncol tile_size =
         (snd startpos + ncol * tile_size) (tile_size - 2) (tile_size - 2)
 
 let mk_screen () = 
-    open_graph " 600x600";
+    open_graph "600x600";
     set_window_title "Game Of Life";
     set_color black
 
@@ -40,7 +40,7 @@ let draw_grid g =
     done
 
 let to_terminal iterations g =
-    for i = 0 to !iterations do 
+    for i = 0 to !iterations - 1 do 
         (* draw_grid !g; *)
         Printf.printf "Iteration: %i\n" (i + 1);
         print_grid !g;

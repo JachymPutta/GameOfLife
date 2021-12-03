@@ -1,3 +1,4 @@
+open FileHandling
 open Grid
 open Simul
 open Rendering 
@@ -25,9 +26,14 @@ let () =
         if !rand && !run 
         then to_terminal iterations g 
         else 
-            if not !rand 
+            if not !rand && !run 
             then 
-                (Printf.printf "Custom board selected, for %i iterations.\n" !iterations;
-                Printf.printf "TODO: Implement file parsing.")
+                (
+                Printf.printf "Custom board selected, for %i iterations.\n" !iterations;
+                let file = List.hd !files in 
+                let lines = read_lines file in
+                let g = read_grid lines in 
+                to_terminal iterations (ref g) 
+                )
     with
         _ -> ()
