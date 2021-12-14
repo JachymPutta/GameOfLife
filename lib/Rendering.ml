@@ -43,18 +43,18 @@ let rec wait_until_q_pressed () =
 let to_screen iter g =
   for i = 0 to !iter - 1 do 
     (* draw_grid !g; *)
-    Printf.printf "Iteration: %i\n" (i + 1);
+    (* Printf.printf "Iteration: %i\n" (i + 1); *)
     draw_grid !g;
     Unix.sleepf 0.3; 
     g := update !g 
-  done;
-  Printf.printf "Finished.\n"
+  done
+  (* Printf.printf "Finished.\n" *)
 
 let to_terminal iterations g =
     for i = 0 to !iterations - 1 do 
         (* draw_grid !g; *)
-        Printf.printf "Iteration: %i\n" (i + 1);
+        (* Printf.printf "Iteration: %i\n" (i + 1); *)
         print_grid !g;
         g := update !g 
-    done;
-    Printf.printf "Finished.\n"
+    done
+    (* Printf.printf "Finished.\n" *)
