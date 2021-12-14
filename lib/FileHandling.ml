@@ -7,7 +7,7 @@ let read_lines filename =
     done; !lines
     with End_of_file ->
     close_in chan;
-    List.rev !lines 
+    List.rev !lines
 
 let read_grid lines =
     let len = List.length lines in 

@@ -8,7 +8,6 @@ let update_cell (x,y : pos) g g' =
     | n when n = 3 && not is_alive -> g'.(x).(y) <- true
     | _ ->  g'.(x).(y) <- false
     
-
 let update (g : grid) : grid = 
     let new_g = Array.copy g in 
     let size =  Array.length g in 

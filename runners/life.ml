@@ -24,7 +24,13 @@ let () =
          USAGE: ./life [options] ?<files>\n\
          see README for more information";
         if !rand && !run 
-        then to_terminal iterations g 
+        then (
+        open_graph " 600x600";
+        set_window_title "Game Of Life";
+        set_color black;
+        to_screen iterations g;
+        wait_until_q_pressed ()
+      ) 
         else 
             if not !rand && !run 
             then 
@@ -32,8 +38,11 @@ let () =
                 Printf.printf "Custom board selected, for %i iterations.\n" !iterations;
                 let file = List.hd !files in 
                 let lines = read_lines file in
-                let g = read_grid lines in 
-                to_terminal iterations (ref g) 
+                let g = read_grid lines in
+                open_graph " 600x600";
+                set_window_title "Game Of Life";
+                set_color black;
+                to_screen iterations (ref g) 
                 )
     with
         _ -> ()
