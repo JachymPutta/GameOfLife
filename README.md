@@ -9,3 +9,5 @@ Conway's game of Life
    - -r        __*run the simulation*  
    - -help     __*Display this list of options*  
 
+## Example:  
+![alt-text](https://github.com/JachymPutta/GameOfLife/blob/main/resources/gameOfLife.gif)
